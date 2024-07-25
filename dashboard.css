@@ -14,3 +14,8 @@ body{
     font-weight: 500;
     font-style: normal;
 }
+:root{
+    --bg-color-1: hsl(240, 68%, 15%);
+    --bg-color-2: rgb(24, 24, 141);
+    --color-1: rgb(73, 10, 99);
+}
