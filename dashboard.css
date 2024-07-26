@@ -120,8 +120,20 @@ body{
     z-index: 100;
     background-color: #000;
   }
-  .spinner{
-    background-image: url("assset/img/giphy.gif");
+  .preloader .pre-img{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: var(--color-2);
+    animation: rotate 2s linear infinite;
+  }
+  @keyframes rotate {
+    0%{
+      transform: rotate(0deg);
+    }
+    100%{
+      transform: rotate(360deg);
+    }
   }
   /* =================wallet=============================== */
   .wallet{
