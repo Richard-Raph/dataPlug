@@ -12,20 +12,22 @@
     <link rel="stylesheet" href="fontawesome-free-6.5.2-web/css/v4-font-face.css">
     <link rel="stylesheet" href="fontawesome-free-6.5.2-web/css/v4-shims.css">
     <link rel="stylesheet" href="fontawesome-free-6.5.2-web/css/v5-font-face.min.css">
+
+    <!-- ===================================our style sheet ============================== -->
+     <link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
                 <!-- ====================================navigation================================================ -->
-                <div class="container">
-                    <div class="wallet">
-                        <p>Wallet Balance</p>
-                        <h2><i class="fa fa-dollar" aria-hidden="true"></i>180</h2>
-                    </div>
                     <div class="navigation">
+                        <div class="wallet">
+                            <p class="wallet-balance-title">Wallet Balance</p>
+                            <h2 id="input-amount"><i class="fas fa-naira-sign" aria-hidden="true"></i>180</h2>
+                        </div>
                         <ul>
                             <li>
                                 <a href="">
                                     <span class="icon">
-                                    <i class="fas fa-dashboard"></i>
+                                    <i class="fa fa-pie-chart"></i>
                                     </span>
                                     <span class="title">Dashboard</span>
                                 </a>
@@ -43,7 +45,7 @@
                             <li>
                                 <a href="">
                                     <span class="icon">
-                                    <i class="fa fa-google-wallet"></i>
+                                    <i class="fa fa-wallet"></i>
                                     </span>
                                     <span class="title">Wallet</span>
                                 </a>
@@ -52,9 +54,9 @@
                             <li>
                                 <a href="">
                                     <span class="icon">
-                                    <i class="fas fa-bank"></i>
+                                    <i class="fa fa-exchange"></i>
                                     </span>
-                                    <span class="title">Message</span>
+                                    <span class="title">Transaction</span>
                                 </a>
                             </li>
               
@@ -90,12 +92,25 @@
                                     <span class="icon">
                                     <i class="fa fa-sign-out v1"></i>
                                     </span>
-                                    <span class="title">Sign-Out</span>
+                                    <span class="title">Log-Out</span>
                                 </a>
                             </li>
                         </ul>
                     </div>
-                </div>
+
+                <!-- ==========================main================================== -->
+<div class="main">
+    <div class="topbar">
+    <div class="toggle">
+        <i class="fa fa-navicon"></i>
+    </div>
+    <div class="search">
+        <label>
+            <input type="text" placeholder="search here" id="search">
+            <i class="fa fa-search"></i>
+        </label>
+    </div>
+    </div>
 
     <script src="dashboard.js"></script>
 </body>
