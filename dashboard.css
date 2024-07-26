@@ -26,6 +26,10 @@ body{
     --color-3: rgb(6, 99, 6);
     --color-4: #e9e5e5;
 }
+/* =============================up nav============================= */
+.nav{
+  width: 100%;
+}
 .navigation{
     position: fixed;
     width: 300px;
