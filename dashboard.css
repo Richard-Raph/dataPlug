@@ -1,0 +1,369 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Zain:wght@200;300;400;700;800;900&display=swap');
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    font-family: "Fira Sans", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    background: linear-gradient(90deg, rgb(246, 246, 253) 80px,rgb(196, 196, 211));
+}
+/* ========================all what we need ========================== */
+:root{
+    --bg-color-1: hsl(240, 68%, 15%);
+    --bg-color-2: rgb(24, 24, 141);
+    --bg-color-3: rgb(202, 202, 235);
+    --bg-color-4: linear-gradient(90deg, rgb(246, 246, 253) 80px,rgb(196, 196, 211));
+    --color-1: rgb(73, 10, 99);
+    --color-2: #fff;
+    --color-3: rgb(6, 99, 6);
+    --color-4: #817d7d;
+}
+.navigation{
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    background: var(--bg-color-1);
+    border-left: 10px solid var(--bg-color-1);
+    transition: 0.5s;
+    /* overflow: hidden; */
+}
+.navigation ul{
+    position: absolute;
+    top: 240px;
+    left: 0;
+    width: 100%;
+}
+.navigation.active{
+    width: 70px;
+    overflow: hidden;
+  }
+  .navigation.active .wallet{
+    width: 50px;
+    border: none;
+    padding: 4px 6px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    top: 95px;
+    left: 0;
+  }
+  .navigation.active .wallet .wallet-balance-title{
+    color: var(--color-4);
+    font-weight: 40;
+    font-stretch: condensed;
+    margin-bottom: 10px;
+  }
+.navigation ul li{
+    position: relative;
+    width: 100%;
+    list-style: none;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+  }
+  .navigation ul li:hover,
+.navigation ul li.hovered{
+  /* background: var(--color-2); */
+  background: linear-gradient(90deg, rgb(246, 246, 253) 80px,rgb(196, 196, 211));
+}
+.navigation ul li a{
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: var(--color-2);
+    padding: 0 17px;
+  }
+  .navigation ul li:hover a,
+.navigation ul li.hovered a{
+  color: var(--bg-color-2);
+}
+.navigation ul li a .icon{
+    position: relative;
+    display: block;
+    min-height: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    padding: 0 10px;
+  }
+  .navigation ul li a .icon .v1{
+    font-size: 1.75rem;
+  }
+  .navigation ul li a .title{
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    text-align: start;
+    white-space: nowrap;
+  }
+  /* =================wallet=============================== */
+  .wallet{
+    width: 250px;
+    border: 1px solid var(--color-2);
+    padding: 30px 60px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    top: 95px;
+    left: 10px;
+    border-radius: 10px;
+  }
+  .wallet .wallet-balance-title{
+    color: var(--color-4);
+    font-weight: 100;
+    font-stretch: extra-expanded;
+    margin-bottom: 10px;
+  }
+  #input-amount{
+    color: var(--color-2);
+  }
+  /* ======================curve outside================================= */
+.navigation ul li:hover a::before,
+.navigation ul li.hovered a::before{
+  content: '';
+  position: absolute;
+  right: 0;
+  top: -50px;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border-radius: 50px;
+  pointer-events: none;
+  z-index: -2;
+  box-shadow: 35px 35px 0 10px rgb(209, 206, 206);
+}
+.navigation ul li:hover a::after,
+.navigation ul li.hovered a::after{
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: -50px;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border-radius: 50px;
+  pointer-events: none;
+  border: none;
+  z-index: -2;
+  box-shadow: 35px -35px 0 10px #d3d2d2;
+}
+/* ===========================main================================== */
+.main{
+    position: absolute;
+    width: calc(100% - 300px);
+    left: 300px;
+    min-height: 100vh;
+    /* background: var(--bg-color-2); */
+    background: linear-gradient(90deg, rgb(246, 246, 253) 80px,rgb(196, 196, 211));
+    transition: 0.5s;
+  }
+  .main.active{
+    width: calc(100% - 80px);
+    left: 80px;
+  }
+  .topbar{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+  }
+  .toggle{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    cursor: pointer;
+  }
+  .search{
+    position: relative;
+    width: 400px;
+    margin: 0 10px;
+    right: 650px;
+  }
+  .search label #search{
+    box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.1) inset, 
+    -10px -10px 10px white inset, 
+        12px 12px 12px rgba(0, 0, 0, 0.1) inset, 
+         -10px -10px 10px white inset, 
+            12px 12px 12px rgba(0, 0, 0, 0.1) inset, 
+              -10px -10px 10px white inset;
+  }
+  .search label #search:hover{
+        box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.1) inset, 
+        -10px -10px 10px white inset, 
+            -10px -10px 10px white inset, 
+                12px 12px 12px rgba(0, 0, 0, 0.1) inset, 
+                    12px 12px 12px rgba(0, 0, 0, 0.1) inset, 
+                      12px 10px 12px rgba(0, 0, 0, 0.1) inset, 
+                        -10px -10px 10px white inset, 
+                           -12px 10px 70px rgba(0, 0, 0, 0.1) inset, 
+                              -12px -12px 100px rgba(0, 0, 0, 0.1) inset;
+  }
+  .search label{
+    position: relative;
+    width: 100%;
+  }
+  .search label input{
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    padding: 5px 20px;
+    padding-left: 35px;
+    font-size: 18px;
+    outline: none;
+    border: 1px solid var(--black1);
+  }
+  .search label .fa-search{
+    position: absolute;
+    top: 0;
+    left: 10px;
+    font-size: 1.2rem;
+  }
+  .user{
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .user img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  @media (max-width: 460px){
+    .topbar{
+        justify-content: space-around;
+      }
+      .toggle{
+        position: relative;
+        width: 10px;
+        height: 10px;
+        font-size: 2rem;
+        z-index: 2;
+      }
+      .search{
+        position: relative;
+        margin: 0 10px;
+        right: -6px;
+        width: 60%;
+      }
+    .search label #search{
+        left: 100px;
+    }
+    .navigation{
+        position: fixed;
+        width: 100vw;
+        height: 100%;
+        z-index: 1;
+        /* overflow: hidden; */
+    }
+    .navigation.active{
+        width: 70px;
+        overflow: hidden;
+      }
+  }
+  @media (max-width: 660px){
+    .topbar{
+        justify-content: space-around;
+      }
+      .toggle{
+        position: relative;
+        width: 15px;
+        height: 15px;
+        font-size: 2rem;
+      }
+      .search{
+        position: relative;
+        margin: 0 10px;
+        right: -6px;
+        width: 90%;
+      }
+    .search label #search{
+        left: 200px;
+    }
+    .navigation{
+        position: fixed;
+        width: 300px;
+        height: 100%;
+        /* overflow: hidden; */
+    }
+    .navigation.active{
+        width: 70px;
+        overflow: hidden;
+      }
+      .navigation ul li a .icon .v1{
+        font-size: 1.4rem;
+      }
+      .navigation ul{
+        position: absolute;
+        top: 200px;
+    }
+    .navigation.active .wallet{
+        top: 60px;
+        position: relative;
+    }
+  }
+  @media (max-width: 990px){
+    .topbar{
+        justify-content: space-around;
+      }
+      .toggle{
+        position: relative;
+        width: 15px;
+        height: 15px;
+        font-size: 2rem;
+      }
+      .search{
+        position: relative;
+        margin: 0 10px;
+        right: -6px;
+        width: 90%;
+      }
+    .search label #search{
+        left: 200px;
+    }
+    .navigation{
+        position: fixed;
+        width: 300px;
+        height: 100%;
+        /* overflow: hidden; */
+    }
+    .navigation.active{
+        width: 70px;
+        overflow: hidden;
+      }
+      .navigation ul li a .icon .v1{
+        font-size: 1.4rem;
+      }
+      .navigation ul{
+        position: absolute;
+        top: 200px;
+    }
+    .navigation.active .wallet{
+        top: 60px;
+        position: relative;
+    }
+  }
