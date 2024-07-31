@@ -225,6 +225,7 @@ body{
     font-size: 2.5rem;
     cursor: pointer;
   }
+
   .content-body{
     position: absolute;
     background-color: black;
@@ -232,6 +233,7 @@ body{
     aspect-ratio: 16/8;
     top: 100px;
   }
+
   /* ==============================search=================================== */
   .search{
     position: relative;
