@@ -18,9 +18,9 @@
 </head>
 <body>
     <!-- ========================================pre-loader========================================= -->
-     <div class="preloader">
+     <!-- <div class="preloader">
         <img src="assset/img/giphy.gif" alt="blueBackground" class="pre-img">
-     </div>
+     </div> -->
                 <!-- ====================================navigation================================================ -->
                     <div class="navigation">
                         <div class="wallet">
@@ -113,9 +113,28 @@
             <input type="text" placeholder="search here" id="search">
             <i class="fa fa-search"></i>
         </label>
+        <div class="user-img">
+            <img src="assset/img/SmartCity_connect_900.jpg" id="photo">
+            <input type="file" id="file" accept="image/png, image/jpg">
+            <label for="file" id="uploadbtn"><i class="fas fa-camera"></i></label>
+        </div>
     </div>
-    </div>
+    <nav>
+        <ul>
+            <li><i class="fa fa-pie-chart"></i></li>
+            <li><i class="fa fa-user"></i></li>
+            <li class="active"><i class="fa fa-wallet"></i></li>
+            <li><i class="fa fa-exchange"></i></li>
+            <li><i class="fa fa-sign-out v1"></i></li>
+        </ul>
+        <div class="effect">
+            <div class="circle"></div>
+        </div>
+    </nav>
+</div>
 
     <script src="dashboard.js"></script>
+    <!-- <script src="pre-loader.js"></script> -->
+     <script src="profile.js"></script>
 </body>
 </html>
