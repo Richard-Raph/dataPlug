@@ -194,7 +194,9 @@ body{
 /* ===========================main================================== */
 .main{
     position: absolute;
-    width: calc(100% - 300px);
+    /* width: calc(100% - 300px); */
+    width: 100vw;
+    height: 100vh;
     left: 300px;
     min-height: 100vh;
     /* background: var(--bg-color-2); */
@@ -223,7 +225,16 @@ body{
     font-size: 2.5rem;
     cursor: pointer;
   }
-  
+
+  .content-body{
+    position: absolute;
+    background-color: black;
+    width: 80%;
+    aspect-ratio: 16/8;
+    top: 100px;
+
+  }
+
   /* ==============================search=================================== */
   .search{
     position: relative;
