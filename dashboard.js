@@ -1,5 +1,5 @@
 // add hovered class to selected list item
-let list = document.querySelectorAll(".container .navigation li");
+let list = document.querySelectorAll("body .navigation li");
 
 function activelink(){
     list.forEach(item=>{
@@ -19,3 +19,15 @@ toggle.onclick = function () {
     navigation.classList.toggle("active");
     main.classList.toggle("active");
 };
+
+
+let nav = document.querySelector("nav");
+let itemsList = document.querySelectorAll("li");
+
+itemsList.forEach(item => {
+    item.onclick = () =>{
+        let beforeActive = nav.querySelector('li.active');
+        if (beforeActive) beforeActive.classList.remove('active');
+        item.classList.add('active');
+    }
+})

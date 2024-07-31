@@ -124,8 +124,20 @@ body{
     z-index: 100;
     background-color: #000;
   }
-  .spinner{
-    background-image: url("assset/img/giphy.gif");
+  .preloader .pre-img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: var(--color-2);
+    animation: rotate 2s linear infinite;
+  }
+  @keyframes rotate {
+    0%{
+      transform: rotate(0deg);
+    }
+    100%{
+      transform: rotate(360deg);
+    }
   }
   /* =================wallet=============================== */
   .wallet{
@@ -136,7 +148,7 @@ body{
     justify-content: center;
     text-align: center;
     position: relative;
-    top: 95px;
+    top: 30px;
     left: 10px;
     border-radius: 10px;
   }
@@ -211,11 +223,13 @@ body{
     font-size: 2.5rem;
     cursor: pointer;
   }
+  /* ==============================search=================================== */
   .search{
     position: relative;
     width: 400px;
+    /* aspect-ratio: 6/1; */
     margin: 0 10px;
-    right: 650px;
+    right: 600px;
   }
   .search label #search{
     box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.1) inset, 
@@ -272,36 +286,149 @@ body{
     height: 100%;
     object-fit: cover;
   }
+  /* =======================profile============================= */
+  .user-img{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    top: 10px;
+    left: calc(100% - 90px);
+    /* background-color: rgba(0, 0, 0, 0.3); */
+    cursor: pointer;
+  }
+  #photo{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+  }
+  #file{
+    display: none;
+  }
+  #uploadbtn{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    padding: 6px 6px;
+    border-radius: 30px;
+    cursor: pointer;
+    transform: translateX(-25px) translateY(45px);
+    z-index: 2;
+    color: var(--color-2);
+    background-color: var(--bg-color-1);
+    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.644);
+  }
+  /* ============================mobile nav================================== */
+  nav{
+    color: var(--color-2);
+    position: fixed;
+    inset: auto 0 0 0;
+    width: min(500px, 100px);
+    --w-h-item: 60px;
+    --position-x-active: 170px;
+  }
+  nav ul{
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(5, var(--w-h-item));
+    grid-template-rows: var(--w-h-item);
+    justify-content: space-between;
+  }
+  nav ul li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    transition: 0.5s;
+    color: #000;
+  }
+  nav ul li.active{
+    transform: translateY(-10px);
+  }
+  nav .effect{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    height: calc(var(--w-h-item) + 10px);
+    z-index: -1;
+    overflow: hidden;
+  }
+  nav .effect::before{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: var(--w-h-item);
+    width: calc(var(--position-x-active) - 10px);
+    background-color: var(--bg-color-2);
+    content: '';
+    border-top-right-radius: 30px;
+    transition: 0.5s;
+  }
+  nav .effect::after{
+    position: absolute;
+    bottom: 0;
+    border-top-left-radius: 30px;
+    right: 0;
+    height: var(--w-h-item);
+    content: '';
+    width: calc(100% - var(--position-x-active) - var(--w-h-item) - 10px);
+    background-color: var(--bg-color-2);
+  }
   @media (max-width: 460px){
     .topbar{
         justify-content: space-around;
       }
       .toggle{
-        position: relative;
+        /* position: relative;
         width: 10px;
         height: 10px;
         font-size: 2rem;
         z-index: 2;
+        left: -60px; */
+        display: none;
       }
       .search{
         position: relative;
         margin: 0 10px;
-        right: -6px;
+        right: 10px;
         width: 60%;
       }
     .search label #search{
         left: 100px;
     }
     .navigation{
-        position: fixed;
+        /* position: fixed;
         width: 100vw;
         height: 100%;
-        z-index: 1;
+        z-index: 1; */
         /* overflow: hidden; */
+        display: none;
     }
-    .navigation.active{
-        width: 70px;
-        overflow: hidden;
+      .navigation ul{
+        position: absolute;
+        top: 20px;
+        font-size: 0.8rem;
+      }
+      .user-img{
+        width: 50px;
+        height: 50px;
+        top: 10px;
+        left: 0;
+        margin-left: 30px;
+      }
+      #photo{
+        width: 50px;
+        height: 50px;
+      }
+      #uploadbtn{
+        transform: translateX(-20px) translateY(20px);
+        width: 25px;
+        height: 25px;
+        padding: 4px 4px;
       }
   }
   @media (max-width: 660px){
@@ -318,7 +445,7 @@ body{
         position: relative;
         margin: 0 10px;
         right: -6px;
-        width: 90%;
+        /* width: 90%; */
       }
     .search label #search{
         left: 200px;
@@ -331,7 +458,6 @@ body{
     }
     .navigation.active{
         width: 70px;
-        overflow: hidden;
       }
       .navigation ul li a .icon .v1{
         font-size: 1.4rem;
@@ -343,6 +469,10 @@ body{
     .navigation.active .wallet{
         top: 60px;
         position: relative;
+    }
+    .user-img{
+      width: 90px;
+      height: 90px;
     }
   }
   @media (max-width: 990px){
