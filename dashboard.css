@@ -231,7 +231,6 @@ body{
     width: 80%;
     aspect-ratio: 16/8;
     top: 100px;
-
   }
   /* ==============================search=================================== */
   .search{
@@ -241,6 +240,7 @@ body{
     margin: 0 10px;
     right: 600px;
   }
+  
   .search label #search{
     box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.1) inset, 
     -10px -10px 10px white inset, 
