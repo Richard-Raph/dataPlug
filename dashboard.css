@@ -228,12 +228,88 @@ body{
 
   .content-body{
     position: absolute;
-    background-color: black;
+    background-color: transparent;
     width: 80%;
     aspect-ratio: 16/8;
     top: 100px;
 
   }
+  /* ========christian====== */
+  .home{
+    background-color: var(--bg-color-1);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: max-content;
+    padding: 10px 10px;
+    display: flex;
+    padding-top: 5px 5px;
+  }
+  .home .fa-home{
+    color: white;
+
+  }
+  .home {
+    color: white;
+   }
+   
+   
+   
+   .user-info{ 
+    display: flex;
+    background-color: transparent;
+    width: 80%;
+    position: relative;
+    margin-left: 20px;
+    margin-top: 20px;
+    gap: 50px;
+  } 
+  .user-info .user-details{
+    width: 50%;
+    height: 120px;
+    background-color: var(--bg-color-1);
+    color: white;
+    gap: 50px;
+    padding: 10px 20px;
+    border-radius: 10px;
+  }  
+ .user-details h3{
+  border-style: ridge;
+  background-color: rgb(7, 7, 59);
+  color: white;
+  align-content: center;
+  width: 150px;
+  text-align: center;
+  border-radius: 8px;
+  font-size: small;
+
+
+  }
+  .user-details2 >i{
+    background-color: white;
+    color: var(--bg-color-1);
+    width: 20px;
+    justify-content: center;
+
+
+    
+
+  }
+  .user-details2{
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 3px;
+    top: 5px;
+    padding: 6px 6px;
+
+}
+  
+
+  
+   
+  
+
+  
 
   /* ==============================search=================================== */
   .search{
