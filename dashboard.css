@@ -328,6 +328,7 @@ body{
     padding: 10px 10px;
     display: flex;
     padding-top: 5px 5px;
+    margin: 50px 20px 20px 20px;
   }
   .home .fa-home{
     color: white;
@@ -336,27 +337,25 @@ body{
   .home {
     color: white;
    }
-   
-   
-   
-   .user-info{ 
-    display: flex;
+   .user-info{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     background-color: transparent;
     width: 80%;
     position: relative;
     margin-left: 20px;
     margin-top: 20px;
     gap: 50px;
-  } 
+  }
   .user-info .user-details{
-    width: 50%;
-    height: 120px;
+    /* width: 50%; */
+    /* height: 120px; */
     background-color: var(--bg-color-1);
     color: white;
     gap: 50px;
     padding: 10px 20px;
     border-radius: 10px;
-  }  
+  }
  .user-details h3{
   border-style: ridge;
   background-color: rgb(7, 7, 59);
@@ -366,35 +365,21 @@ body{
   text-align: center;
   border-radius: 8px;
   font-size: small;
-
-
   }
-  .user-details2 >i{
-    background-color: white;
-    color: var(--bg-color-1);
-    width: 20px;
-    justify-content: center;
-
-
-    
-
+  .simple{
+    display: flex;
+    align-content: center;
   }
-  .user-details2{
-    font-size: 1.25rem;
-    font-weight: bold;
-    margin-bottom: 3px;
-    top: 5px;
-    padding: 6px 6px;
-
-}
-  
-
-  
-   
-  
-
-  
-
+  .we-chat{
+    padding-left: 6px;
+    padding-right: 2px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    background-color: #fff;
+  }
+  .simple .we-chat .nw{
+    color: var(--bg-color-2);
+  }
   /* ==============================search=================================== */
   .search{
     position: absolute;
