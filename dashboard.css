@@ -246,7 +246,7 @@ body{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     padding: 10px 10px;
-    margin-top: 20px;
+    margin-top: 70px;
     gap: 20px;
   }
   .sup-item{
@@ -328,7 +328,7 @@ body{
     padding: 10px 10px;
     display: flex;
     padding-top: 5px 5px;
-    margin: 50px 20px 20px 20px;
+    margin: 80px 20px 20px 20px;
   }
   .home .fa-home{
     color: white;
@@ -338,8 +338,9 @@ body{
     color: white;
    }
    .user-info{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    /* grid-template-columns: repeat(2, 1fr); */
     background-color: transparent;
     width: 80%;
     position: relative;
@@ -352,33 +353,47 @@ body{
     /* height: 120px; */
     background-color: var(--bg-color-1);
     color: white;
-    gap: 50px;
-    padding: 10px 20px;
+    padding: 10px 40px;
     border-radius: 10px;
   }
- .user-details h3{
-  border-style: ridge;
-  background-color: rgb(7, 7, 59);
-  color: white;
-  align-content: center;
-  width: 150px;
-  text-align: center;
-  border-radius: 8px;
-  font-size: small;
+  .user-info .user-details .fa-user{
+    transform: translateY(20px) translateX(-30px);
+    font-size: 1.6em;
   }
   .simple{
     display: flex;
-    align-content: center;
+    align-items: center;
+    gap: 20px;
+    justify-content: space-between;
   }
   .we-chat{
-    padding-left: 6px;
-    padding-right: 2px;
-    padding-top: 2px;
-    padding-bottom: 2px;
     background-color: #fff;
+    padding: 10px 4px 4px 20px;
+    border-radius: 4px;
+    transition: transform 0.5s box-shadow 1s;
+  }
+  .we-chat:hover{
+    transform: scale(0.8);
+    box-shadow: 0 0 0 10px #f1f1f1 inset;
+  }
+  .we-chat .nw{
+    font-size: 2.9rem;
+    text-align: center;
+    width: 60px;
+    height: 30px;
   }
   .simple .we-chat .nw{
     color: var(--bg-color-2);
+  }
+  .simple .bmb{
+    color: #e9e5e5;
+    text-decoration: none;
+    border: 1px solid #e9e5e5;
+    background: rgb(10, 10, 29);
+    padding: 8px 40px;
+  }
+  .simple .bmb:focus, .simple .bmb:hover{
+    transform: scale(0.9);
   }
   /* ==============================search=================================== */
   .search{
@@ -677,8 +692,11 @@ body{
     transform: translateX(-25px) translateY(35px);
   }
 }
-/* 
-@media (max-width: 760px) {
+
+@media (max-width: 1280px){
+  body{
+    justify-content: center;
+  }
   .navigation,.navigation.active{
     width: 70px;
   }
@@ -686,19 +704,22 @@ body{
     position: absolute;
     left: 0;
   }
+  .wallet{
+    transform: scale(0.7) translateX(-15px);
+    padding: 30px 0px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    top: 30px;
+    left: 0;
+  }
   .main.active{
-    width: calc(100% - 0);
-    left: 60px;
+    width: calc(90% - 0);
+    left: 50px;
   }
   .search .label{
     display: none;
-  }
-  .card{
-    width: 83vw;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    padding: 10px 0;
-    gap: 20px;
   }
   .sup-item{
     width: 100%;
@@ -709,79 +730,31 @@ body{
     font-size: 0.4rem;
     transform: translateX(-20px);
   }
-  .user-img{
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    position: sticky;
-    top: 10px;
-    margin-top: 40px;
-    transform: translateX(100px);
-    left: calc(100% - 90px);
+  .simple{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
-  #photo{
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
+  .we-chat{
+    background-color: #fff;
+    padding: 8px 3px 3px 15px;
+    border-radius: 3px;
+    transition: transform 0.5s box-shadow 1s;
   }
-  #uploadbtn{
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    border-radius: 30px;
-    transform: translateX(-25px) translateY(35px);
+  .we-chat:hover{
+    transform: scale(0.7);
+    box-shadow: 0 0 0 10px #f1f1f1 inset;
   }
-} */
-/* @media (max-width: 1000px) {
-  .navigation,.navigation.active{
-    width: 70px;
+  .we-chat .nw{
+    font-size: 2rem;
   }
-  .main{
-    position: absolute;
-    left: 0;
+  .simple .bmb{
+    border-radius: 5px;
+    background: rgb(10, 10, 29);
+    padding: 8px 20px;
   }
-  .main.active{
-    width: calc(100% - 0);
-    left: 70px;
+  .simple .bmb:focus, .simple .bmb:hover{
+    transform: scale(0.9);
   }
-  .search .label{
-    display: none;
-  }
-  .card{
-    width: 83vw;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    padding: 10px 0;
-    gap: 20px;
-  }
-  .sup-item{
-    width: 100%;
-    background: var(--color-4);
-    border-radius: 10px;
-  }
-  .v1{
-    font-size: 0.4rem;
-    transform: translateX(-20px);
-  }
-  .user-img{
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    position: sticky;
-    top: 10px;
-    margin-top: 40px;
-    left: calc(93% - 90px);
-  }
-  #photo{
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-  }
-  #uploadbtn{
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    border-radius: 30px;
-    transform: translateX(-25px) translateY(35px);
-  }
-} */
+}
