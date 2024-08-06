@@ -17,22 +17,26 @@
      <link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
-    <!-- ========================================pre loader========================================= -->
-     <div class="preloader">
-        <div class="spinner"></div>
-     </div>
-                <!-- ====================================navigation================================================ -->
-                <div class="nav"></div>
-                    <div class="navigation">
-                        <div class="wallet">
-                            <p class="wallet-balance-title">Wallet Balance</p>
-                            <h2 id="input-amount"><i class="fas fa-naira-sign" aria-hidden="true"></i>180</h2>
-                        </div>
+    <!-- ========================================pre-loader========================================= -->
+     <!-- <div class="preloader">
+        <img src="assset/img/giphy.gif" alt="blueBackground" class="pre-img">
+     </div> -->
+    <!-- ====================================navigation================================================ -->
+    <div class="navigation">
+        <div class="wallet">
+            <p class="wallet-balance-title">Wallet Balance</p>
+            <h2 id="input-amount"><i class="fas fa-naira-sign" aria-hidden="true"></i>180</h2>
+        </div>
+                    <!-- <div class="user-details">
+                        <div class="user-details2">
+                            <i class="fa fa-wechat"></i>
+                            <p># 180</p>
+                        </div> -->
                         <ul>
                             <li>
                                 <a href="">
                                     <span class="icon">
-                                    <i class="fa fa-pie-chart"></i>
+                                    <i class="fa fa-pie-chart v1"></i>
                                     </span>
                                     <span class="title">Dashboard</span>
                                 </a>
@@ -41,7 +45,7 @@
                             <li>
                                 <a href="">
                                     <span class="icon">
-                                    <i class="fa fa-user"></i>
+                                    <i class="fa fa-user v1"></i>
                                     </span>
                                     <span class="title">Services</span>
                                 </a>
@@ -50,7 +54,7 @@
                             <li>
                                 <a href="">
                                     <span class="icon">
-                                    <i class="fa fa-wallet"></i>
+                                    <i class="fa fa-wallet v1"></i>
                                     </span>
                                     <span class="title">Wallet</span>
                                 </a>
@@ -59,7 +63,7 @@
                             <li>
                                 <a href="">
                                     <span class="icon">
-                                    <i class="fa fa-exchange"></i>
+                                    <i class="fa fa-exchange v1"></i>
                                     </span>
                                     <span class="title">Transaction</span>
                                 </a>
@@ -103,20 +107,106 @@
                         </ul>
                     </div>
 
-                <!-- ==========================main================================== -->
+                <!-- ==========================main================================= -->
 <div class="main">
-    <div class="topbar">
+  <div class="topbar">
     <div class="toggle">
         <i class="fa fa-navicon"></i>
     </div>
     <div class="search">
-        <label>
+        <label class="label">
             <input type="text" placeholder="search here" id="search">
             <i class="fa fa-search"></i>
         </label>
     </div>
+        <div class="user-img">
+            <img src="assset/img/SmartCity_connect_900.jpg" id="photo">
+            <input type="file" id="file" accept="image/png, image/jpg">
+            <label for="file" id="uploadbtn"><i class="fas fa-camera"></i></label>
+        </div>
     </div>
+        <div class="container-body">
+            <div class="home">
+                <i class="fas fa-home" aria-hidden="true"></i>
+                <p>Home</p>
+            </div>
+            <div class="user-info">
+                <div class="user-details">
+                    <i class="fa fa-user"></i>
+                    <p>user details</p>
+                    <h1>Omeke Charles</h1>
+                    <h5>user id: j3nj234io43434wesef1999kk</h5>
+                </div>
+                <div class="user-details simple">
+                    <div class="we-chat">
+                        <i class="fa fa-wechat nw" aria-hidden="true"></i>
+                    </div>
+                    <a href="#" class="bmb">Fund Wallet</a>
+                    <div class="mtd">
+                       <i class="fas fa-naira-sign"></i> <h2>180</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="sup-item">
+                <img src="assset/img/download (1).png" alt="">
+                <h3 class="h3">NIN verification</h3> 
+                <p class="sup-details">Verify people using their National identity Number</p>
+                <div class="use-btn">
+                    <a href="#" class="amount-btn">Use Services</a>
+                </div>
+            </div>
+            <div class="sup-item">
+                <img src="assset/img/download (1).png" alt="">
+                <h3 class="h3">BVN verification</h3> 
+                <a href="#" class="a">Service Available</a>
+                <p class="sup-details">Verify people using provide Bank verification Number</p>
+                <div class="use-btn">
+                    <a href="#" class="amount-btn">Use Services</a>
+                    <span class="span"><i class=" fa fa-naira-sign so"></i>150</span>
+                </div>
+            </div>
+            <div class="sup-item">
+                <img src="assset/img/download (1).png" alt="">
+                <h3 class="h3">BVN verification <span>V2</span></h3> 
+                <a href="#" class="a">Service Available</a>
+                <p class="sup-details">Verify people using provide Bank verification Number</p>
+                <div class="use-btn">
+                    <a href="#" class="amount-btn">Use Services</a>
+                    <span class="span"><i class=" fa fa-naira-sign so"></i>150</span>
+                </div>
+            </div>
+            <div class="sup-item">
+                <img src="assset/img/download (1).png" alt="">
+                <h3 class="h3">Voters identification Number (VIN) verification</h3> 
+                <a href="#" class="a al">Service Available</a>
+                <p class="sup-details">Verify Voters identification Number (VIN Number)</p>
+                <div class="use-btn">
+                    <a href="#" class="amount-btn">Use Services</a>
+                    <span class="span"><i class=" fa fa-naira-sign so"></i>150</span>
+                </div>
+            </div>
+            <div class="sup-item">
+                <img src="assset/img/download (1).png" alt="">
+                <h3 class="h3">Jamb Service</h3> 
+                <p class="sup-details">Jamb Services</p>
+                <div class="use-btn">
+                    <a href="#" class="amount-btn">Use Services</a>
+                </div>
+            </div>
+            <div class="sup-item">
+                <img src="assset/img/download (1).png" alt="">
+                <h3 class="h3">Tin verification</h3> 
+                <p class="sup-details">Verify tax identification Number (TIN Number)</p>
+                <div class="use-btn">
+                    <a href="#" class="amount-btn">Use Services</a>
+                </div>
+            </div>
+        </div>
 
     <script src="dashboard.js"></script>
+    <!-- <script src="pre-loader.js"></script> -->
+     <script src="profile.js"></script>
 </body>
 </html>
