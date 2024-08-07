@@ -273,13 +273,18 @@ body{
     font-weight: 600;
     margin-left: 10px;
     text-decoration: none;
-    color: rgb(23, 221, 23);
+    color: rgb(23, 69, 221);
     background-color: #bedda1;
-    box-shadow: 12px 12px -10px black inset,
-    -12px -12px 10px #fff inset;
+    /* box-shadow: 12px 12px -10px black inset, */
+    /* -12px -12px 10px #fff inset; */
+    box-shadow: -9px 11px 25px -13px #000000;
     padding: 4px 6px;
     border-radius: 7px;
     border: none;
+    transition: all 0.5s;
+  }
+  .sup-item .a:hover{
+    background: #8fa07e;
   }
   .sup-item img,.h3,.a:is(.al){
     display: inline;
@@ -304,9 +309,20 @@ body{
     color: #fff;
     text-decoration: none;
     background: var(--bg-color-2);
-    padding: 4px 4px;
+    padding: 8px 20px;
     border-radius: 7px;
-    font-size: 0.8rem;
+    font-size: 1rem;
+    transition: all ease-in-out 0.8s;
+  }
+  .use-btn .amount-btn:hover{
+    background: var(--bg-color-1);
+    color: #e9e5e5;
+    transform: scale(0.9);
+  }
+  .use-btn .amount-btn:focus{
+    background: var(--bg-color-1);
+    color: #e9e5e5dc;
+    transform: scale(0.9);
   }
   .span,.fa-naira-sign.so{
     color: rgb(23, 221, 23);
