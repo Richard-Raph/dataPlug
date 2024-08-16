@@ -1,0 +1,776 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Zain:wght@200;300;400;700;800;900&display=swap');
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    font-family: "Fira Sans", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    /* background: linear-gradient(90deg, rgb(246, 246, 253) 80px,rgb(196, 196, 211)); */
+    background: #fff;
+}
+/* ========================all what we need ========================== */
+:root{
+    --bg-color-1: hsl(240, 68%, 15%);
+    --bg-color-2: rgb(24, 24, 141);
+    --bg-color-3: rgb(202, 202, 235);
+    --bg-color-4: linear-gradient(90deg, rgb(246, 246, 253) 80px,rgb(196, 196, 211));
+    --color-1: rgb(73, 10, 99);
+    --color-2: #fff;
+    --color-3: rgb(6, 99, 6);
+    --color-4: #e9e5e5;
+}
+/* =============================up nav============================= */
+.nav{
+  width: 100%;
+}
+.navigation{
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    background: var(--bg-color-1);
+    border-left: 10px solid var(--bg-color-1);
+    transition: 0.5s;
+    /* overflow: hidden; */
+}
+.navigation ul{
+    position: absolute;
+    top: 240px;
+    left: 0;
+    width: 100%;
+}
+.navigation.active{
+    width: 70px;
+    overflow: hidden;
+  }
+  .navigation.active .wallet{
+    width: 50px;
+    border: none;
+    padding: 4px 6px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    top: 95px;
+    left: 0;
+  }
+  .navigation.active .wallet .wallet-balance-title{
+    color: var(--color-4);
+    font-weight: 40;
+    font-stretch: condensed;
+    margin-bottom: 10px;
+  }
+.navigation ul li{
+    position: relative;
+    width: 100%;
+    list-style: none;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+  }
+  .navigation ul li:hover,
+.navigation ul li.hovered{
+  background: var(--color-2);
+  /* background: linear-gradient(90deg, rgb(246, 246, 253) 80px,rgb(250, 250, 255)); */
+  border: none;
+}
+.navigation ul li a{
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: var(--color-2);
+    padding: 0 17px;
+  }
+  .navigation ul li:hover a,
+.navigation ul li.hovered a{
+  color: var(--bg-color-2);
+}
+.navigation ul li a .icon{
+    position: relative;
+    display: block;
+    min-height: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    padding: 0 10px;
+  }
+  .navigation ul li a .icon .v1{
+    font-size: 1.75rem;
+  }
+  .navigation ul li a .title{
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    text-align: start;
+    white-space: nowrap;
+  }
+  /* =================================pre-loader======================= */
+  .preloader{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    background-color: #000;
+  }
+  .preloader .pre-img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: var(--color-2);
+    animation: rotate 2s linear infinite;
+  }
+  @keyframes rotate {
+    0%{
+      transform: rotate(0deg);
+    }
+    100%{
+      transform: rotate(360deg);
+    }
+  }
+  /* =================wallet=============================== */
+  .wallet{
+    width: 250px;
+    border: 1px solid var(--color-2);
+    padding: 30px 60px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    top: 30px;
+    left: 10px;
+    border-radius: 10px;
+  }
+  .wallet .wallet-balance-title{
+    color: var(--color-4);
+    font-weight: 900;
+    font-stretch: extra-expanded;
+    margin-bottom: 10px;
+  }
+  #input-amount{
+    color: var(--color-2);
+  }
+  /* ======================curve outside================================= */
+.navigation ul li:hover a::before,
+.navigation ul li.hovered a::before{
+  content: '';
+  position: absolute;
+  right: 0;
+  top: -50px;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border-radius: 50px;
+  pointer-events: none;
+  z-index: -2;
+  box-shadow: 35px 35px 0 10px rgb(246, 246, 253);
+}
+.navigation ul li:hover a::after,
+.navigation ul li.hovered a::after{
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: -50px;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border-radius: 50px;
+  pointer-events: none;
+  border: none;
+  z-index: -2;
+  box-shadow: 35px -35px 0 10px rgb(246, 246, 253);
+}
+/* ===========================main================================== */
+.main{
+    position: absolute;
+    /* width: calc(100% - 300px); */
+    width: 100vw;
+    height: 100vh;
+    left: 300px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    /* min-height: 100vh; */
+    /* background: var(--bg-color-2); */
+    /* background: linear-gradient(90deg, rgb(246, 246, 253) 80px,rgb(196, 196, 211)); */
+    background: #fff;
+    transition: 0.5s;
+  }
+  .main.active{
+    width: calc(100% - 80px);
+    left: 80px;
+  }
+  .topbar{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+  }
+  .toggle{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    cursor: pointer;
+  }
+
+  .content-body{
+    position: absolute;
+    background-color: transparent;
+    width: 80%;
+    aspect-ratio: 16/8;
+    top: 100px;
+  }
+/* ============================card side========================================= */
+  .card{
+    width: 83vw;
+    background-color: transparent;
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 10px 10px;
+    margin-top: 70px;
+    gap: 20px;
+  }
+  .sup-item{
+    width: 100%;
+    background: var(--color-4);
+    display: block;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: center;
+    padding: 20px 30px;
+    border-radius: 30px;
+  }
+  .sup-item img{
+    width: 30px;
+    height: 30px;
+    border-radius: 14px;
+  }
+  .sup-item img,.h3,.a{
+    display: inline-flex;
+    justify-content: space-between;
+  }
+  .sup-item .a{
+    font-size: 0.6rem;
+    font-weight: 600;
+    margin-left: 10px;
+    text-decoration: none;
+    color: rgb(23, 69, 221);
+    background-color: #bedda1;
+    /* box-shadow: 12px 12px -10px black inset, */
+    /* -12px -12px 10px #fff inset; */
+    box-shadow: -9px 11px 25px -13px #000000;
+    padding: 4px 6px;
+    border-radius: 7px;
+    border: none;
+    transition: all 0.5s;
+  }
+  .sup-item .a:hover{
+    background: #8fa07e;
+  }
+  .sup-item img,.h3,.a:is(.al){
+    display: inline;
+    margin-left: 0;
+  }
+  .sup-item .h3{
+    color: var(--bg-color-2);
+  }
+  .sup-item .sup-details{
+    color: var(--bg-color-2);
+    margin-top: 20px;
+  }
+  .sup-item .h3{
+    word-wrap: break-word;
+  }
+  .use-btn{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  .use-btn .amount-btn{
+    color: #fff;
+    text-decoration: none;
+    background: var(--bg-color-2);
+    padding: 8px 20px;
+    border-radius: 7px;
+    font-size: 1rem;
+    transition: all ease-in-out 0.8s;
+  }
+  .use-btn .amount-btn:hover{
+    background: var(--bg-color-1);
+    color: #e9e5e5;
+    transform: scale(0.9);
+  }
+  .use-btn .amount-btn:focus{
+    background: var(--bg-color-1);
+    color: #e9e5e5dc;
+    transform: scale(0.9);
+  }
+  .span,.fa-naira-sign.so{
+    color: rgb(23, 221, 23);
+    background-color: #d4dbcd;
+    box-shadow: 12px 12px -10px black inset,
+    -12px -12px 10px #fff inset;
+    font-weight: 600;
+    border: none;
+    padding: 1px 1px;
+    border-radius: 2px;
+  }
+  /* ========christian====== */
+  .home{
+    background-color: var(--bg-color-1);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: max-content;
+    padding: 10px 10px;
+    display: flex;
+    padding-top: 5px 5px;
+    margin: 80px 20px 20px 20px;
+  }
+  .home .fa-home{
+    color: white;
+
+  }
+  .home {
+    color: white;
+   }
+   .user-info{
+    display: flex;
+    flex-wrap: wrap;
+    /* grid-template-columns: repeat(2, 1fr); */
+    background-color: transparent;
+    width: 80%;
+    position: relative;
+    margin-left: 20px;
+    margin-top: 20px;
+    gap: 50px;
+  }
+  .user-info .user-details{
+    /* width: 50%; */
+    /* height: 120px; */
+    background-color: var(--bg-color-1);
+    color: white;
+    padding: 10px 40px;
+    border-radius: 10px;
+  }
+  .user-info .user-details .fa-user{
+    transform: translateY(20px) translateX(-30px);
+    font-size: 1.6em;
+  }
+  .simple{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: space-between;
+  }
+  .we-chat{
+    background-color: #fff;
+    padding: 10px 4px 4px 20px;
+    border-radius: 4px;
+    transition: transform 0.5s box-shadow 1s;
+  }
+  .we-chat:hover{
+    transform: scale(0.8);
+    box-shadow: 0 0 0 10px #f1f1f1 inset;
+  }
+  .we-chat .nw{
+    font-size: 2.9rem;
+    text-align: center;
+    width: 60px;
+    height: 30px;
+  }
+  .simple .we-chat .nw{
+    color: var(--bg-color-2);
+  }
+  .simple .bmb{
+    color: #e9e5e5;
+    text-decoration: none;
+    border: 1px solid #e9e5e5;
+    background: rgb(10, 10, 29);
+    padding: 8px 40px;
+  }
+  .simple .bmb:focus, .simple .bmb:hover{
+    transform: scale(0.9);
+  }
+  /* ==============================search=================================== */
+  .search{
+    position: absolute;
+    width: 400px;
+    --r:30px;
+    --g:70px;
+    /* aspect-ratio: 6/1; */
+    margin-right: calc(var(--r) * var(--g));
+    left: calc(var(--r) + var(--g));
+  }
+  
+  .search label #search{
+    box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.1) inset, 
+    -10px -10px 10px white inset, 
+        12px 12px 12px rgba(0, 0, 0, 0.1) inset, 
+         -10px -10px 10px white inset, 
+            12px 12px 12px rgba(0, 0, 0, 0.1) inset, 
+              -10px -10px 10px white inset;
+  }
+  .search label #search:hover{
+        box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.1) inset, 
+        -10px -10px 10px white inset, 
+            -10px -10px 10px white inset, 
+                12px 12px 12px rgba(0, 0, 0, 0.1) inset, 
+                    12px 12px 12px rgba(0, 0, 0, 0.1) inset, 
+                      12px 10px 12px rgba(0, 0, 0, 0.1) inset, 
+                        -10px -10px 10px white inset, 
+                           -12px 10px 70px rgba(0, 0, 0, 0.1) inset, 
+                              -12px -12px 100px rgba(0, 0, 0, 0.1) inset;
+  }
+  .search label{
+    position: relative;
+    width: 100%;
+  }
+  .search label input{
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    padding: 5px 20px;
+    padding-left: 35px;
+    font-size: 18px;
+    outline: none;
+    border: 1px solid var(--black1);
+  }
+  .search label .fa-search{
+    position: absolute;
+    top: 0;
+    left: 10px;
+    font-size: 1.2rem;
+  }
+  /* .user{
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .user img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  } */
+  /* =======================profile============================= */
+  .user-img{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    top: 10px;
+    left: calc(100% - 90px);
+    /* background-color: rgba(0, 0, 0, 0.3); */
+    cursor: pointer;
+  }
+  #photo{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+  }
+  #file{
+    display: none;
+  }
+  #uploadbtn{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    padding: 6px 6px;
+    border-radius: 30px;
+    cursor: pointer;
+    transform: translateX(-25px) translateY(45px);
+    z-index: 2;
+    color: var(--color-2);
+    background-color: var(--bg-color-1);
+    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.644);
+  }
+  /* ============================mobile nav================================== */
+  /* nav{
+    color: var(--color-2);
+    position: fixed;
+    inset: auto 0 0 0;
+    width: min(500px, 100px);
+    --w-h-item: 60px;
+    --position-x-active: 170px;
+  }
+  nav ul{
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(5, var(--w-h-item));
+    grid-template-rows: var(--w-h-item);
+    justify-content: space-between;
+  }
+  nav ul li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    transition: 0.5s;
+    color: #000;
+  }
+  nav ul li.active{
+    transform: translateY(-10px);
+  }
+  nav .effect{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    height: calc(var(--w-h-item) + 10px);
+    z-index: -1;
+    /* overflow: hidden; */
+  /* }
+  nav .effect::before{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: var(--w-h-item);
+    width: calc(var(--position-x-active) - 10px);
+    background-color: var(--bg-color-2);
+    content: '';
+    border-top-right-radius: 30px;
+    transition: 0.5s;
+  }
+  nav .effect::after{
+    position: absolute;
+    bottom: 0;
+    border-top-right-radius: 30px;
+    right: 29px;
+    margin-left: 10px;
+    height: var(--w-h-item);
+    content: '';
+    color: #fff;
+    /* width: calc(var(--position-x-active) - 10px); */
+    /* width: calc(100% - var(--position-x-active) - var(--w-h-item) - 10px);
+    background-color: var(--bg-color-2);
+  } */
+@media (max-width: 360px){
+  .navigation,.navigation.active{
+    width: 70px;
+  }
+  .main{
+    position: absolute;
+    left: 0;
+  }
+  .main.active{
+    width: calc(100% - 0);
+    left: 50px;
+  }
+  .search .label{
+    display: none;
+  }
+  .card{
+    width: 60vw;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    padding: 10px 0;
+    gap: 20px;
+  }
+  .sup-item{
+    width: 80%;
+    background: var(--color-4);
+    border-radius: 10px;
+  }
+  .v1{
+    /* font-size: 0.4rem; */
+    transform: translateX(-20px);
+  }
+  .navigation ul li a .icon{
+    position: relative;
+    display: block;
+    min-height: 60px;
+    height: 60px;
+    line-height: 20px;
+    text-align: center;
+    padding: 0 5px;
+  }
+  .user-img{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    position: sticky;
+    top: 10px;
+    margin-top: 40px;
+    left: calc(93% - 90px);
+  }
+  #photo{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+  }
+  #uploadbtn{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    transform: translateX(-25px) translateY(35px);
+  }
+  .wallet{
+    transform: scale(0.7) translateX(-15px);
+    padding: 30px 0px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    top: 30px;
+    left: 0;
+  }
+}
+@media (max-width: 700px) {
+  .navigation,.navigation.active{
+    width: 70px;
+  }
+  .main{
+    position: absolute;
+    left: 0;
+  }
+  .wallet{
+    transform: scale(0.7) translateX(-15px);
+    padding: 30px 0px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    top: 30px;
+    left: 0;
+  }
+  .main.active{
+    width: calc(100% - 0);
+    left: 50px;
+  }
+  .search .label{
+    display: none;
+  }
+  .card{
+    width: 83vw;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    /* grid-template-rows: repeat(3, 1fr); */
+    padding: 10px 0;
+    gap: 20px;
+  }
+  .sup-item{
+    width: 85%;
+    background: var(--color-4);
+    border-radius: 10px;
+  }
+  .v1{
+    font-size: 0.4rem;
+    transform: translateX(-20px);
+  }
+  .user-img{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    position: sticky;
+    top: 10px;
+    margin-top: 10px;
+    left: calc(100% - 90px);
+  }
+  #photo{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+  }
+  #uploadbtn{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    transform: translateX(-25px) translateY(35px);
+  }
+}
+
+@media (max-width: 1280px){
+  body{
+    justify-content: center;
+  }
+  .navigation,.navigation.active{
+    width: 70px;
+  }
+  .main{
+    position: absolute;
+    left: 0;
+  }
+  .wallet{
+    transform: scale(0.7) translateX(-15px);
+    padding: 30px 0px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    top: 30px;
+    left: 0;
+  }
+  .main.active{
+    width: calc(90% - 0);
+    left: 50px;
+  }
+  .search .label{
+    display: none;
+  }
+  .sup-item{
+    width: 100%;
+    background: var(--color-4);
+    border-radius: 10px;
+  }
+  .v1{
+    font-size: 0.4rem;
+    transform: translateX(-20px);
+  }
+  .simple{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .we-chat{
+    background-color: #fff;
+    padding: 8px 3px 3px 15px;
+    border-radius: 3px;
+    transition: transform 0.5s box-shadow 1s;
+  }
+  .we-chat:hover{
+    transform: scale(0.7);
+    box-shadow: 0 0 0 10px #f1f1f1 inset;
+  }
+  .we-chat .nw{
+    font-size: 2rem;
+  }
+  .simple .bmb{
+    border-radius: 5px;
+    background: rgb(10, 10, 29);
+    padding: 8px 20px;
+  }
+  .simple .bmb:focus, .simple .bmb:hover{
+    transform: scale(0.9);
+  }
+}
